@@ -1,0 +1,7 @@
+--新建函数FUN_HELLO
+--select fun_hello from dual;
+CREATE OR REPLACE FUNCTION FUN_HELLO RETURN VARCHAR2 AS 
+BEGIN
+  RETURN 'Hello World!';
+END FUN_HELLO;
+

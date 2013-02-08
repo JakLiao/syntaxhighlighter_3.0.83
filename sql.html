@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Hello SyntaxHighlighter</title>
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushSql.js"></script>
+<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+</head>
+
+<body style="background: white; font-family: Helvetica">
+
+<h1>Hello SyntaxHighlighter</h1>
+<pre class="brush: sql; auto-links: false; ">
+
+删除应用名 --OPCFBLOG 要删除的表空间名
+delete from maxapps where app='OPCFBLOG';
+delete from maxpresentation where app='OPCFBLOG';
+delete from sigoption where app='OPCFBLOG';
+delete from applicationauth where app='OPCFBLOG';
+delete from maxlabels where app='OPCFBLOG';
+delete from maxmenu where moduleapp='OPCFBLOG' and menutype !='MODULE';
+delete from maxmenu where moduleapp='OPCFBLOG' and elementtype='APP' and keyvalue='OPCFBLOG';
+delete from maxmenu where keyvalue = 'OPCFBLOG';
+delete from appdoctype where app= 'OPCFBLOG';
+
+显示statusdate时间为2011年以后的
+SELECT personid, status, displayname, department, title, statusdate
+  FROM person
+ where statusdate > =TO_DATE('2011-01-01', 'YYYY-MM-DD')
+显示示statusdate时间为2011年6月的
+SELECT personid, status, displayname, department, title, statusdate
+  FROM person
+ where statusdate >= TO_DATE('2011-06-01', 'YYYY-MM-DD') AND statusdate < TO_DATE('2011-7-1', 'YYYY-MM-DD')
+
+
+</pre>
+
+</html>
